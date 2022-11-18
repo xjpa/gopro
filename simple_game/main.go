@@ -8,6 +8,12 @@ type Player struct {
 	AttackPower int
 }
 
+func (p *Player) die() {
+	//*Player: pointer
+	//the "*" operator retrieves the variable that the pointer refers to
+	p.Health = 0
+}
+
 func main() {
 	player := &Player{
 		//&Player: pointer
@@ -16,13 +22,13 @@ func main() {
 		Name:        "Chad",
 		AttackPower: 50,
 	}
-	killPlayer(player)
+	player.die()
 	fmt.Println("player health is ", player.Health)
 }
 
-//*Player: pointer
-//* operator retrieves the variable that the pointer refers to
+/*
 func killPlayer(player *Player) {
 	player.Health = 0
 	fmt.Println("game over")
 }
+*/
