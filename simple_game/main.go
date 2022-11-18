@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type Game struct {
 	isRunning bool
@@ -16,6 +19,21 @@ func NewGame() *Game {
 
 func (g *Game) Start() {
 	g.isRunning = true
+	g.gameLoop()
+}
+
+func (g *Game) gameLoop() {
+	interval := 1 * time.Second
+	//this for-loop keeps looping til we quit the program
+	for {
+		fmt.Println("the game is rnning")
+		time.Sleep(interval) //time.Sleep -- belongs in standard library, makes it sleep which in this case is for 1 second
+	}
+	/*
+		//loop
+		for i := 0; i < 10; i++ {
+		}
+	*/
 }
 
 type Player struct {
@@ -40,9 +58,9 @@ func (p *Player) die() {
 }
 
 func main() {
-
-	playerA := NewPlayer("playerA", 100, 50)
-	playerB := NewPlayer("player B", 100, 50)
+	game := NewGame()
+	game.Start()
+	fmt.Printf("%+v", game) //shows everything inside the struct, the "+v" means verbose
 	/*
 		playerA := &Player{
 			//&Player: pointer
@@ -52,9 +70,14 @@ func main() {
 			AttackPower: 50,
 		}
 	*/
-	playerA.die()
-	playerB.die()
-	fmt.Println("player health is ", playerA.Health)
+	/*
+		playerA := NewPlayer("playerA", 100, 50)
+		playerB := NewPlayer("player B", 100, 50)
+
+		playerA.die()
+		playerB.die()
+		fmt.Println("player health is ", playerA.Health)
+	*/
 }
 
 /*
