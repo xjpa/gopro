@@ -31,3 +31,20 @@ anything that needs multiple values, you wanna group those values into structure
 -- constructors
 
 no concept of classical constructosr in golang, we need to do it ourselves
+
+-- loops
+
+```go
+for i := 0; i < 10; i++ {
+}
+```
+
+this one also works
+
+```go
+for{
+
+}
+```
+
+42.07

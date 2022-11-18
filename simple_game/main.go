@@ -29,11 +29,6 @@ func (g *Game) gameLoop() {
 		fmt.Println("the game is rnning")
 		time.Sleep(interval) //time.Sleep -- belongs in standard library, makes it sleep which in this case is for 1 second
 	}
-	/*
-		//loop
-		for i := 0; i < 10; i++ {
-		}
-	*/
 }
 
 type Player struct {
@@ -61,28 +56,4 @@ func main() {
 	game := NewGame()
 	game.Start()
 	fmt.Printf("%+v", game) //shows everything inside the struct, the "+v" means verbose
-	/*
-		playerA := &Player{
-			//&Player: pointer
-			//& operator yields the address of a variable
-			Health:      100,
-			Name:        "player A",
-			AttackPower: 50,
-		}
-	*/
-	/*
-		playerA := NewPlayer("playerA", 100, 50)
-		playerB := NewPlayer("player B", 100, 50)
-
-		playerA.die()
-		playerB.die()
-		fmt.Println("player health is ", playerA.Health)
-	*/
 }
-
-/*
-func killPlayer(player *Player) {
-	player.Health = 0
-	fmt.Println("game over")
-}
-*/
