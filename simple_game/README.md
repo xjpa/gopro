@@ -39,7 +39,7 @@ for i := 0; i < 10; i++ {
 }
 ```
 
-this one also works
+this one also works but loops indefinitely
 
 ```go
 for{
