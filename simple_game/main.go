@@ -2,10 +2,22 @@ package main
 
 import "fmt"
 
+type Game struct {
+}
+
 type Player struct {
-	Health      int
+	Health      uint //uint -- unsigned integer, w/c means it cant be negative
 	Name        string
 	AttackPower int
+}
+
+func NewPlayer(name string, hp uint, ap int) *Player {
+	//mde our own constructor
+	return &Player{
+		Name:        name,
+		Health:      hp,
+		AttackPower: ap,
+	}
 }
 
 func (p *Player) die() {
@@ -15,15 +27,20 @@ func (p *Player) die() {
 }
 
 func main() {
-	player := &Player{
-		//&Player: pointer
-		//& operator yields the address of a variable
-		Health:      100,
-		Name:        "Chad",
-		AttackPower: 50,
-	}
-	player.die()
-	fmt.Println("player health is ", player.Health)
+	playerA := NewPlayer("playerA", 100, 50)
+	playerB := NewPlayer("player B", 100, 50)
+	/*
+		playerA := &Player{
+			//&Player: pointer
+			//& operator yields the address of a variable
+			Health:      100,
+			Name:        "player A",
+			AttackPower: 50,
+		}
+	*/
+	playerA.die()
+	playerB.die()
+	fmt.Println("player health is ", playerA.Health)
 }
 
 /*
