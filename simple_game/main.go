@@ -9,15 +9,20 @@ type Player struct {
 }
 
 func main() {
-	player := Player{
+	player := &Player{
+		//&Player: pointer
+		//& operator yields the address of a variable
 		Health:      100,
 		Name:        "Chad",
 		AttackPower: 50,
 	}
 	killPlayer(player)
+	fmt.Println("player health is ", player.Health)
 }
 
-func killPlayer(player Player) {
+//*Player: pointer
+//* operator retrieves the variable that the pointer refers to
+func killPlayer(player *Player) {
 	player.Health = 0
 	fmt.Println("game over")
 }
