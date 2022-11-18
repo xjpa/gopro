@@ -1,5 +1,15 @@
 notes
 
+-- small, big letters
+
+- lowercase: private
+- uppercase first letter: public
+
+ex.
+
+- isRunning - private
+- IsRunning
+
 -- pointers
 
 & operator yields the address of a variable

@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 type Game struct {
+	isRunning bool
+	IsRunning bool
 }
 
 type Player struct {
