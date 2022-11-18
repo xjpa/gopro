@@ -4,7 +4,18 @@ import "fmt"
 
 type Game struct {
 	isRunning bool
-	IsRunning bool
+}
+
+func NewGame() *Game {
+	//made our own constructor as golang has no in built
+	return &Game{
+		isRunning: false,
+		//this is not needed tho as default value of booelans in Golang is false
+	}
+}
+
+func (g *Game) Start() {
+	g.isRunning = true
 }
 
 type Player struct {
@@ -29,6 +40,7 @@ func (p *Player) die() {
 }
 
 func main() {
+
 	playerA := NewPlayer("playerA", 100, 50)
 	playerB := NewPlayer("player B", 100, 50)
 	/*

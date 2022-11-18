@@ -1,5 +1,7 @@
 notes
 
+-- default value of booleans: false
+
 -- small, big letters
 
 - lowercase: private
